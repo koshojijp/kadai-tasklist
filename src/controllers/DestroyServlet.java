@@ -42,6 +42,7 @@ public class DestroyServlet extends HttpServlet {
             em.remove(task);
             em.getTransaction().commit();
             em.close();
+            request.getSession().setAttribute("flush", "削除が完了しました。");
 
             request.getSession().removeAttribute("task_id");
 
